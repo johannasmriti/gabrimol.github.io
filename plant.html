@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Gabrimol</title>
@@ -12,45 +12,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-      /* Remove the navbar's default margin-bottom and rounded borders */
-      .navbar {
-        margin-bottom: 0;
-        border-radius: 0;
-      }
-
-      /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-      .row.content {
-        height: 450px;
-      }
-
-      /* Set gray background color and 100% height */
-      .sidenav {
-        padding-top: 20px;
-        background-color: #f1f1f1;
-        height: 100%;
-      }
-
-      /* Set black background color, white text and some padding */
-      footer {
-        background-color: #555;
-        color: white;
-        padding: 15px;
-      }
-
-      /* On small screens, set height to 'auto' for sidenav and grid */
-      @media screen and (max-width: 767px) {
-        .sidenav {
-          height: auto;
-          padding: 15px;
-        }
-        .row.content {
-          height: auto;
-        }
-      }
+      /* Your existing styles here */
     </style>
     <script>
+      // Redirect to plant.html if no extension is provided
+      if (window.location.pathname.endsWith("/gabrimol/plant")) {
+        window.location.href =
+          window.location.pathname + ".html" + window.location.search;
+      }
       $(document).ready(function () {
-        // Function to get the value of a URL parameter by name
         function getParameterByName(name, url) {
           name = name.replace(/[\[\]]/g, "\\$&");
           var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
@@ -60,10 +30,8 @@
           return decodeURIComponent(results[2].replace(/\+/g, " "));
         }
 
-        // Get the value of the 'plantId' parameter from the URL
         var plantId = getParameterByName("plantId", window.location.href);
 
-        // Update the 'href' attribute of the "Go To Record" button with the generated link
         $("#goToRecordButton").attr(
           "href",
           "https://script.google.com/macros/s/AKfycby9V-hDKnhi6YNnksV94DASRZnyFIw-XFY22pqeUpRP/dev?plantId=" +
@@ -72,6 +40,7 @@
       });
     </script>
   </head>
+
   <body style="background-color: greenyellow">
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
@@ -91,7 +60,6 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
@@ -124,26 +92,5 @@
         </div>
       </div>
     </div>
-  </body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Gabrimol</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <script>
-      // Redirect to plant.html if no extension is provided
-      if (window.location.pathname.endsWith("/gabrimol/plant")) {
-        window.location.href =
-          window.location.pathname + ".html" + window.location.search;
-      }
-    </script>
-  </head>
-
-  <body>
-    <h1>Welcome to our plant tracking app - Gabrimol</h1>
   </body>
 </html>
